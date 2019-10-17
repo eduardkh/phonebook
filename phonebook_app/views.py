@@ -4,7 +4,11 @@ from django.http import HttpResponse
 
 
 def phone_list(request):
-    return HttpResponse('<h1>phone_list</h1>')
+    title = 'Welcome to my Phonebook App'
+    context = {
+        'title': title,
+    }
+    return render(request, 'index.html', context)
 
 
 def phone_detail(request):
