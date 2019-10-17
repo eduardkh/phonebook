@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from phonebook_app import views as phonebook_app_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', phonebook_app_views.home, name='home'),
 ]
