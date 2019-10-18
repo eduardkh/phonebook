@@ -7,13 +7,13 @@ from .forms import *
 
 
 def phone_list(request):
-    title = 'Welcome to my Phonebook App'
+    title = 'Contact list'
     querryset = Contact.objects.all()
     context = {
         'title': title,
         'querryset': querryset,
     }
-    return render(request, 'index.html', context)
+    return render(request, 'list.html', context)
 
 
 def phone_detail(request, pk):
@@ -26,7 +26,7 @@ def phone_detail(request, pk):
 
 
 def phone_create(request):
-    title = 'Create Contact'
+    title = 'Contact Create'
     form = ContactForm(request.POST or None)
     if form.is_valid():
         instance = form.save(commit=False)
@@ -43,7 +43,7 @@ def phone_create(request):
 
 
 def phone_update(request, pk=None):
-    title = 'Edit Contact'
+    title = 'Contact Edit'
     instance = get_object_or_404(Contact, pk=pk)
     form = ContactForm(request.POST or None, instance=instance)
     if form.is_valid():

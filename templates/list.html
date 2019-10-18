@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }} | {{ block.super }}{% endblock title %}
+{% block content %}
+<h1>{{ title }}</h1>
+<p></p>
+{% for object in querryset %}
+<a href="{% url 'phone:phone_detail' pk=object.pk %}">{{ object.pk }}</a> <br>
+{{ object.first_name }} {{ object.last_name }}<br>
+{% if object.image %}
+{{ object.image.url }}<br>
+{% endif %}
+{{ object.notes }}<br>
+{% endfor %}
+</p>
+{% endblock content %}
