@@ -4,9 +4,16 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>Try Django 1.9 Blog rewritten to 2.1</title>
+        <title>Phonebook App</title>
     </head>
     <body>
         <h1>{{ title }}</h1>
+            <p></p>
+    {% for object in querryset %}
+        {{ object.first_name }} {{ object.last_name }}<br> 
+        {{ object.image.url }}<br> 
+        {{ object.notes }}<br> 
+    {% endfor %}
+    </p>
     </body>
 </html>

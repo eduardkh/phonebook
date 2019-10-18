@@ -1,12 +1,15 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import *
 # Create your views here.
 
 
 def phone_list(request):
     title = 'Welcome to my Phonebook App'
+    querryset = Contact.objects.all()
     context = {
         'title': title,
+        'querryset': querryset,
     }
     return render(request, 'index.html', context)
 
