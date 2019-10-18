@@ -11,10 +11,11 @@
 <body>
     <h1>{{ title }}</h1>
     <p></p>
+
+    {% if contact.image %}
     {{ contact.image.url }}<br>
+    {% endif %}
     {{ contact.first_name }} {{ contact.last_name }}<br>
-    {{ phone.phone }}<br>
-    {{ email.email }}<br>
     {{ contact.notes }}<br>
     </p>
 </body>
