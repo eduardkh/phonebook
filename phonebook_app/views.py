@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages
 from .models import *
@@ -60,5 +60,8 @@ def phone_update(request, pk=None):
     return render(request, 'create.html', context)
 
 
-def phone_delete(request):
-    return HttpResponse('<h1>phone_delete</h1>')
+def phone_delete(request, pk=None):
+    instance = get_object_or_404(Contact, pk=pk)
+    instance.delete()
+    messages.success(request, 'Contact Deleted')
+    return redirect('phone:phone_list')

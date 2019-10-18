@@ -8,5 +8,5 @@ urlpatterns = [
     re_path('detail/(?P<pk>\d+)/', views.phone_detail, name='phone_detail'),
     path('create/', views.phone_create, name='phone_create'),
     re_path('edit/(?P<pk>\d+)/', views.phone_update, name='phone_update'),
-    path('delete/', views.phone_delete, name='phone_delete'),
+    re_path('delete/(?P<pk>\d+)/', views.phone_delete, name='phone_delete'),
 ]
