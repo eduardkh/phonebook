@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from .models import *
 # Create your views here.
@@ -15,7 +15,14 @@ def phone_list(request):
 
 
 def phone_detail(request):
-    return HttpResponse('<h1>phone_detail</h1>')
+    title = 'Contact detail'
+    context = {
+        'title': title,
+        'contact': get_object_or_404(Contact, pk=1),
+        'phone': get_object_or_404(Phone, pk=1),
+        'email': get_object_or_404(Email, pk=1),
+    }
+    return render(request, 'detail.html', context)
 
 
 def phone_create(request):
