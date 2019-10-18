@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>Phonebook App</title>
-    </head>
-    <body>
-        <h1>{{ title }}</h1>
-            <p></p>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Phonebook App</title>
+</head>
+
+<body>
+    <h1>{{ title }}</h1>
+    <p></p>
     {% for object in querryset %}
-        <a href="{% url 'phone:phone_detail' pk=object.pk %}">{{ object.pk }}</a> <br>
-        {{ object.first_name }} {{ object.last_name }}<br> 
-        {{ object.image.url }}<br> 
-        {{ object.notes }}<br> 
+    <a href="{% url 'phone:phone_detail' pk=object.pk %}">{{ object.pk }}</a> <br>
+    {{ object.first_name }} {{ object.last_name }}<br>
+    {% if object.image %}
+    {{ object.image.url }}<br>
+    {% endif %}
+    {{ object.notes }}<br>
     {% endfor %}
     </p>
-    </body>
+</body>
+
 </html>
