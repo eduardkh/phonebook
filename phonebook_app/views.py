@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib import messages
 from .models import *
 from .forms import *
 # Create your views here.
@@ -31,6 +32,7 @@ def phone_create(request):
         instance = form.save(commit=False)
         # pre-save
         instance.save()
+        messages.success(request, 'Contact Created')
         return HttpResponseRedirect(instance.get_absolute_url())
 
     context = {
@@ -47,6 +49,7 @@ def phone_update(request, pk=None):
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()
+        messages.success(request, 'Contact Updated')
         return HttpResponseRedirect(instance.get_absolute_url())
 
     context = {
