@@ -8,12 +8,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="{% static 'css/materialize.min.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>{% block title %}Phonebook App{% endblock title %}</title>
 </head>
 
 <body>
-    {% include 'messages.html' %}
     <div class="container">
+        {% include 'messages.html' %}
         {% block content %}
         {% endblock content %}
     </div>
