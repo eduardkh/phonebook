@@ -14,13 +14,13 @@ def phone_list(request):
     return render(request, 'index.html', context)
 
 
-def phone_detail(request):
+def phone_detail(request, pk):
     title = 'Contact detail'
     context = {
         'title': title,
-        'contact': get_object_or_404(Contact, pk=1),
-        'phone': get_object_or_404(Phone, pk=1),
-        'email': get_object_or_404(Email, pk=1),
+        'contact': get_object_or_404(Contact, pk=pk),
+        'phone': get_object_or_404(Phone, pk=pk),
+        'email': get_object_or_404(Email, pk=pk),
     }
     return render(request, 'detail.html', context)
 
