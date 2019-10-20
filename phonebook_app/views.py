@@ -15,6 +15,8 @@ def phone_list(request):
     query = request.GET.get('q')
     if query:
         queryset_list = queryset_list.filter(
+            Q(company__icontains=query) |
+            Q(job_title__icontains=query) |
             Q(first_name__icontains=query) |
             Q(last_name__icontains=query) |
             Q(notes__icontains=query)
