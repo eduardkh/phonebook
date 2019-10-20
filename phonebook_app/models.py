@@ -12,14 +12,17 @@ class Contact(models.Model):
                                on_delete=models.SET_NULL)
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
-    image = models.ImageField(null=True, blank=True, upload_to='uploads/')
+    image = models.ImageField(null=True, blank=True, upload_to='uploads/',
+                              height_field='height_field', width_field='width_field')
+    height_field = models.IntegerField(default=0)
+    width_field = models.IntegerField(default=0)
     notes = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return '{} {}'.format(self.first_name, self.last_name)
 
     def get_absolute_url(self):
-        return reverse('phone:phone_detail', kwargs={'pk': self.pk}) 
+        return reverse('phone:phone_detail', kwargs={'pk': self.pk})
 
 
 # Phone

@@ -6,8 +6,7 @@
 <div class="row">
         <div class="col s8">
                 {% if contact.image %}
-                {{ contact.image }}
-                contact.image
+                <img class="responsive-img" src="{{ contact.image.url }}">
                 {% else %}
                 <img class="responsive-img" src="{% static 'img/600x400.png' %}">
                 {% endif %}
