@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import *
 from .forms import *
 # Create your views here.
@@ -8,10 +9,26 @@ from .forms import *
 
 def phone_list(request):
     title = 'Contact list'
-    querryset = Contact.objects.all()
+    queryset_list = Contact.objects.all()
+    paginator = Paginator(queryset_list, 6)
+    page_request_var = 'page'
+    page = request.GET.get(page_request_var)
+    last_page = str(paginator.page(paginator.num_pages)).split(' ')[1]
+
+    try:
+        queryset = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        queryset = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        queryset = paginator.page(paginator.num_pages)
+
     context = {
         'title': title,
-        'querryset': querryset,
+        'queryset': queryset,
+        'page_request_var': page_request_var,
+        'last_page': last_page,
     }
     return render(request, 'list.html', context)
 

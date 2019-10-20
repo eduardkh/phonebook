@@ -2,15 +2,82 @@
 {% load staticfiles %}
 {% block title %}{{ title }} | {{ block.super }}{% endblock title %}
 {% block content %}
-<h1>{{ title }}</h1>
-<p></p>
-{% for object in querryset %}
-<a href="{% url 'phone:phone_detail' pk=object.pk %}">{{ object.pk }}</a> <br>
-{{ object.first_name }} {{ object.last_name }}<br>
-{% if object.image %}
-{{ object.image.url }}<br>
+<main>
+    <section>
+        <h1>{{ title }}</h1>
+        <p>
+            {% for object in queryset %}
+            <a href="{% url 'phone:phone_detail' pk=object.pk %}">{{ object.pk }}</a> <br>
+            {{ object.first_name }} {{ object.last_name }}<br>
+            {% if object.image %}
+            {{ object.image.url }}<br>
+            {% endif %}
+            {{ object.notes }}<br>
+            {% endfor %}
+        </p>
+    </section>
+    <!-- this paginator will show all pages
+<div>
+{% if queryset.has_other_pages %}
+<ul class="pagination center">
+{% if queryset.has_previous %}
+<li><a href="?{{ page_request_var }}={{ queryset.previous_page_number }}"><i class="material-icons">chevron_left</i></a></li>
+{% else %}
+<li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
 {% endif %}
-{{ object.notes }}<br>
+{% for i in queryset.paginator.page_range %}
+{% if queryset.number == i %}
+    <li class="active"><a href="#!">{{ i }}</a></li>
+{% else %}
+    <li><a href="?{{ page_request_var }}={{ i }}">{{ i }}</a></li>
+{% endif %}
 {% endfor %}
-</p>
+{% if queryset.has_next %}
+<li class="waves-effect"><a href="?{{ page_request_var }}={{ queryset.next_page_number }}"><i class="material-icons">chevron_right</i></a></li>
+{% else %}
+<li class="disabled"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+{% endif %}
+</ul>
+{% endif %}
+</div> -->
+    <div>
+        <ul class="pagination center">
+            {% if queryset.has_previous %}
+            <li><a href="?{{ page_request_var }}=1"><i class="material-icons">first_page</i></a></li>
+            <li><a href="?{{ page_request_var }}={{ queryset.previous_page_number }}"><i
+                        class="material-icons">chevron_left</i></a></li>
+            {% else %}
+            <li class="disabled"><a href="#!"><i class="material-icons">first_page</i></a></li>
+            <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+            {% endif %}
+            <!-- Jump a few pages back
+        {% if queryset.number|add:'-2' > 1 %}
+            <li><a href="?{{ page_request_var }}={{ queryset.number|add:'-3' }}"><i class="material-icons">chevron_left</i></a></li>
+        {% endif %} -->
+            {% for i in queryset.paginator.page_range %}
+            {% if queryset.number == i %}
+            <li class="active"><a href="#!">{{ i }}</a></li>
+            {% elif i > queryset.number|add:'-5' and i < queryset.number|add:'5' %}
+            <li><a href="?{{ page_request_var }}={{ i }}">{{ i }}</a></li>
+            {% endif %}
+            {% endfor %}
+            <!-- Jump a few pages fore
+        {% if queryset.paginator.num_pages > queryset.number|add:'2' %}
+            <li><a href="?{{ page_request_var }}={{ queryset.number|add:'3' }}"><i class="material-icons">chevron_right</i></a></li>
+        {% endif %} -->
+            {% if queryset.has_next %}
+            <li class="waves-effect"><a href="?{{ page_request_var }}={{ queryset.next_page_number }}"><i
+                        class="material-icons">chevron_right</i></a></li>
+            <li class="waves-effect"><a href="?{{ page_request_var }}={{ last_page }}"><i
+                        class="material-icons">last_page</i></a></li>
+            {% else %}
+            <li class="disabled"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+            <li class="disabled"><a href="#!"><i class="material-icons">last_page</i></a></li>
+            {% endif %}
+        </ul>
+    </div>
+    </div>
+    <section>
+    </section>
+</main>
 {% endblock content %}

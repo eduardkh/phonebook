@@ -18,7 +18,7 @@
                 {% for email in emails %}
                 <h4>{{ email }}</h4>
                 {% endfor %}
-                <h5>{{ contact.notes }}</h5>
+                <h5>{{ contact.notes|linebreaks }}</h5>
 
                 <a href="{% url 'phone:phone_list' %}" class="waves-effect waves-light btn"><i
                                 class="material-icons left">arrow_back</i>Back</a>
