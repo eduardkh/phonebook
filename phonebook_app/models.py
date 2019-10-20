@@ -12,6 +12,8 @@ class Contact(models.Model):
                                on_delete=models.SET_NULL)
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
+    company = models.CharField(max_length=120, null=True, blank=True)
+    job_title = models.CharField(max_length=120, null=True, blank=True)
     image = models.ImageField(null=True, blank=True, upload_to='uploads/',
                               height_field='height_field', width_field='width_field')
     height_field = models.IntegerField(default=0)
