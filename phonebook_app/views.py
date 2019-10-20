@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.db.models import Q
 from .models import *
 from .forms import *
 # Create your views here.
@@ -13,7 +14,11 @@ def phone_list(request):
     # for simple Search Form
     query = request.GET.get('q')
     if query:
-        queryset_list = queryset_list.filter(first_name__icontains=query)
+        queryset_list = queryset_list.filter(
+            Q(first_name__icontains=query) |
+            Q(last_name__icontains=query) |
+            Q(notes__icontains=query)
+        ).distinct()
     paginator = Paginator(queryset_list, 6)
     page_request_var = 'page'
     page = request.GET.get(page_request_var)
@@ -27,7 +32,6 @@ def phone_list(request):
     except EmptyPage:
         # If page is out of range (e.g. 9999), deliver last page of results.
         queryset = paginator.page(paginator.num_pages)
-
     context = {
         'title': title,
         'queryset': queryset,
