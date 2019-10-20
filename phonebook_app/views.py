@@ -10,6 +10,10 @@ from .forms import *
 def phone_list(request):
     title = 'Contact list'
     queryset_list = Contact.objects.all()
+    # for simple Search Form
+    query = request.GET.get('q')
+    if query:
+        queryset_list = queryset_list.filter(first_name__icontains=query)
     paginator = Paginator(queryset_list, 6)
     page_request_var = 'page'
     page = request.GET.get(page_request_var)
