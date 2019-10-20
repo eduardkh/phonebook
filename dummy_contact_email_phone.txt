@@ -1,0 +1,150 @@
+c = Contact.objects.filter(first_name__icontains="Jarrett")[0]
+Phone.objects.create(phone="(828) 329-9757", contact=c)
+Email.objects.create(email="jmcguire601@eriugcmtterraj.net", contact=c)
+c = Contact.objects.filter(first_name__icontains="Destinee")[0]
+Phone.objects.create(phone="(332) 495-0217", contact=c)
+Email.objects.create(email="despinoza705@azonipseeenitsed.com", contact=c)
+c = Contact.objects.filter(first_name__icontains="Bria")[0]
+Phone.objects.create(phone="(234) 582-4751", contact=c)
+Email.objects.create(email="bjones613@senojairb.biz", contact=c)
+c = Contact.objects.filter(first_name__icontains="Dakota")[0]
+Phone.objects.create(phone="(865) 336-5876", contact=c)
+Email.objects.create(email="dchavez628@zevahcatokad.org", contact=c)
+c = Contact.objects.filter(first_name__icontains="Ross")[0]
+Phone.objects.create(phone="(651) 970-1084", contact=c)
+Email.objects.create(email="rferguson733@nosugrefssor.biz", contact=c)
+c = Contact.objects.filter(first_name__icontains="Tucker")[0]
+Phone.objects.create(phone="(493) 424-8191", contact=c)
+Email.objects.create(email="tbennett42@ttennebrekcut.org", contact=c)
+c = Contact.objects.filter(first_name__icontains="Alma")[0]
+Phone.objects.create(phone="(382) 225-5305", contact=c)
+Email.objects.create(email="amckinney165@yennikcmamla.biz", contact=c)
+c = Contact.objects.filter(first_name__icontains="Daniella")[0]
+Phone.objects.create(phone="(252) 488-2573", contact=c)
+Email.objects.create(email="dbennett47@ttenneballeinad.com", contact=c)
+c = Contact.objects.filter(first_name__icontains="Trevon")[0]
+Phone.objects.create(phone="(858) 482-4965", contact=c)
+Email.objects.create(email="twolf545@flownovert.org", contact=c)
+c = Contact.objects.filter(first_name__icontains="Meaghan")[0]
+Phone.objects.create(phone="(588) 650-8370", contact=c)
+Email.objects.create(email="mcross314@ssorcnahgaem.biz", contact=c)
+c = Contact.objects.filter(first_name__icontains="Arthur")[0]
+Phone.objects.create(phone="(706) 271-6393", contact=c)
+Email.objects.create(email="amarsh472@hsramruhtra.biz", contact=c)
+c = Contact.objects.filter(first_name__icontains="Deanna")[0]
+Phone.objects.create(phone="(677) 210-7239", contact=c)
+Email.objects.create(email="dmurray750@yarrumannaed.net", contact=c)
+c = Contact.objects.filter(first_name__icontains="Kelsie")[0]
+Phone.objects.create(phone="(416) 536-1577", contact=c)
+Email.objects.create(email="kfreeman89@nameerfeislek.biz", contact=c)
+c = Contact.objects.filter(first_name__icontains="Zachary")[0]
+Phone.objects.create(phone="(705) 254-2488", contact=c)
+Email.objects.create(email="zspencer521@recnepsyrahcaz.org", contact=c)
+c = Contact.objects.filter(first_name__icontains="Carter")[0]
+Phone.objects.create(phone="(254) 563-9202", contact=c)
+Email.objects.create(email="croberts455@streborretrac.com", contact=c)
+c = Contact.objects.filter(first_name__icontains="Sheldon")[0]
+Phone.objects.create(phone="(967) 629-5298", contact=c)
+Email.objects.create(email="smann806@nnamnodlehs.biz", contact=c)
+c = Contact.objects.filter(first_name__icontains="Brenna")[0]
+Phone.objects.create(phone="(786) 444-1071", contact=c)
+Email.objects.create(email="bwood640@doowannerb.biz", contact=c)
+c = Contact.objects.filter(first_name__icontains="Beau")[0]
+Phone.objects.create(phone="(726) 744-5189", contact=c)
+Email.objects.create(email="bmiranda159@adnarimuaeb.org", contact=c)
+c = Contact.objects.filter(first_name__icontains="Emma")[0]
+Phone.objects.create(phone="(462) 602-6595", contact=c)
+Email.objects.create(email="echavez298@zevahcamme.net", contact=c)
+c = Contact.objects.filter(first_name__icontains="Cristian")[0]
+Phone.objects.create(phone="(409) 399-3576", contact=c)
+Email.objects.create(email="ccohen347@nehocnaitsirc.com", contact=c)
+c = Contact.objects.filter(first_name__icontains="Emanuel")[0]
+Phone.objects.create(phone="(579) 518-3601", contact=c)
+Email.objects.create(email="edouglas906@salguodleuname.biz", contact=c)
+c = Contact.objects.filter(first_name__icontains="Asia")[0]
+Phone.objects.create(phone="(734) 688-6257", contact=c)
+Email.objects.create(email="afitzgerald309@dlaregztifaisa.net", contact=c)
+c = Contact.objects.filter(first_name__icontains="Patricia")[0]
+Phone.objects.create(phone="(662) 243-9301", contact=c)
+Email.objects.create(email="pjenkins919@sniknejaicirtap.net", contact=c)
+c = Contact.objects.filter(first_name__icontains="Craig")[0]
+Phone.objects.create(phone="(655) 739-9989", contact=c)
+Email.objects.create(email="cvega954@agevgiarc.biz", contact=c)
+c = Contact.objects.filter(first_name__icontains="Jasmin")[0]
+Phone.objects.create(phone="(598) 578-2427", contact=c)
+Email.objects.create(email="jwolfe130@eflownimsaj.com", contact=c)
+c = Contact.objects.filter(first_name__icontains="Curtis")[0]
+Phone.objects.create(phone="(660) 558-9406", contact=c)
+Email.objects.create(email="cgeorge418@egroegsitruc.net", contact=c)
+c = Contact.objects.filter(first_name__icontains="Brandy")[0]
+Phone.objects.create(phone="(249) 827-8297", contact=c)
+Email.objects.create(email="bconner971@rennocydnarb.org", contact=c)
+c = Contact.objects.filter(first_name__icontains="Riley")[0]
+Phone.objects.create(phone="(554) 517-0414", contact=c)
+Email.objects.create(email="rdunn804@nnudyelir.org", contact=c)
+c = Contact.objects.filter(first_name__icontains="Leo")[0]
+Phone.objects.create(phone="(823) 632-7600", contact=c)
+Email.objects.create(email="lcaldwell490@llewdlacoel.org", contact=c)
+c = Contact.objects.filter(first_name__icontains="Dale")[0]
+Phone.objects.create(phone="(585) 351-1299", contact=c)
+Email.objects.create(email="dbush797@hsubelad.com", contact=c)
+c = Contact.objects.filter(first_name__icontains="Cory")[0]
+Phone.objects.create(phone="(469) 884-8028", contact=c)
+Email.objects.create(email="cpierce346@ecreipyroc.net", contact=c)
+c = Contact.objects.filter(first_name__icontains="Harrison")[0]
+Phone.objects.create(phone="(986) 712-1399", contact=c)
+Email.objects.create(email="hbush149@hsubnosirrah.net", contact=c)
+c = Contact.objects.filter(first_name__icontains="Sandy")[0]
+Phone.objects.create(phone="(785) 558-9262", contact=c)
+Email.objects.create(email="smay968@yamydnas.org", contact=c)
+c = Contact.objects.filter(first_name__icontains="Katlyn")[0]
+Phone.objects.create(phone="(673) 967-6387", contact=c)
+Email.objects.create(email="kkim221@miknyltak.net", contact=c)
+c = Contact.objects.filter(first_name__icontains="Tyrone")[0]
+Phone.objects.create(phone="(562) 355-8037", contact=c)
+Email.objects.create(email="tfernandez962@zednanrefenoryt.net", contact=c)
+c = Contact.objects.filter(first_name__icontains="Maria")[0]
+Phone.objects.create(phone="(311) 414-8874", contact=c)
+Email.objects.create(email="mthompson976@nospmohtairam.biz", contact=c)
+c = Contact.objects.filter(first_name__icontains="Dean")[0]
+Phone.objects.create(phone="(901) 775-4021", contact=c)
+Email.objects.create(email="dmiller242@rellimnaed.biz", contact=c)
+c = Contact.objects.filter(first_name__icontains="Jerome")[0]
+Phone.objects.create(phone="(918) 451-3715", contact=c)
+Email.objects.create(email="jmccormick755@kcimroccmemorej.biz", contact=c)
+c = Contact.objects.filter(first_name__icontains="Chance")[0]
+Phone.objects.create(phone="(593) 975-3948", contact=c)
+Email.objects.create(email="calvarado672@odaravlaecnahc.net", contact=c)
+c = Contact.objects.filter(first_name__icontains="Gary")[0]
+Phone.objects.create(phone="(620) 576-4099", contact=c)
+Email.objects.create(email="ghunt243@tnuhyrag.org", contact=c)
+c = Contact.objects.filter(first_name__icontains="Hunter")[0]
+Phone.objects.create(phone="(865) 791-4971", contact=c)
+Email.objects.create(email="hdeleon68@noeledretnuh.org", contact=c)
+c = Contact.objects.filter(first_name__icontains="Randall")[0]
+Phone.objects.create(phone="(629) 329-4293", contact=c)
+Email.objects.create(email="rbutler912@reltublladnar.com", contact=c)
+c = Contact.objects.filter(first_name__icontains="Mikayla")[0]
+Phone.objects.create(phone="(888) 484-1162", contact=c)
+Email.objects.create(email="mromero844@oremoralyakim.biz", contact=c)
+c = Contact.objects.filter(first_name__icontains="Parker")[0]
+Phone.objects.create(phone="(615) 656-7263", contact=c)
+Email.objects.create(email="pbaker323@rekabrekrap.net", contact=c)
+c = Contact.objects.filter(first_name__icontains="Josephine")[0]
+Phone.objects.create(phone="(689) 448-1767", contact=c)
+Email.objects.create(email="jscott294@ttocsenihpesoj.org", contact=c)
+c = Contact.objects.filter(first_name__icontains="Tasha")[0]
+Phone.objects.create(phone="(350) 312-5455", contact=c)
+Email.objects.create(email="tpowell79@llewopahsat.com", contact=c)
+c = Contact.objects.filter(first_name__icontains="Casey")[0]
+Phone.objects.create(phone="(388) 439-6038", contact=c)
+Email.objects.create(email="cromero296@oremoryesac.com", contact=c)
+c = Contact.objects.filter(first_name__icontains="Tevin")[0]
+Phone.objects.create(phone="(749) 265-5523", contact=c)
+Email.objects.create(email="tpatton319@nottapnivet.com", contact=c)
+c = Contact.objects.filter(first_name__icontains="Jerome")[0]
+Phone.objects.create(phone="(286) 651-8714", contact=c)
+Email.objects.create(email="jglover38@revolgemorej.com", contact=c)
+c = Contact.objects.filter(first_name__icontains="Dallas")[0]
+Phone.objects.create(phone="(517) 499-4860", contact=c)
+Email.objects.create(email="dray823@yarsallad.org", contact=c)
