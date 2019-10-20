@@ -5,21 +5,27 @@
 <h1>{{ title }}</h1>
 <div class="row">
         <div class="col s8">
-            {% if contact.image %}
-            {{ contact.image }}
-            contact.image
-            {% else %}
-            <img class="responsive-img" src="{% static 'img/600x400.png' %}">
-            {% endif %}
-<h2>{{ contact.first_name }} {{ contact.last_name }}</h2>
-<h3>{{ contact.notes }}</h3>
+                {% if contact.image %}
+                {{ contact.image }}
+                contact.image
+                {% else %}
+                <img class="responsive-img" src="{% static 'img/600x400.png' %}">
+                {% endif %}
+                <h2>{{ contact.first_name }} {{ contact.last_name }}</h2>
+                {% for phone in phones %}
+                <h4>{{ phone }}</h4>
+                {% endfor %}
+                {% for email in emails %}
+                <h4>{{ email }}</h4>
+                {% endfor %}
+                <h5>{{ contact.notes }}</h5>
 
-    <a href="{% url 'phone:phone_list' %}" class="waves-effect waves-light btn"><i
-            class="material-icons left">arrow_back</i>Back</a>
-    <a href="{% url 'phone:phone_update' pk=contact.pk %}" class="waves-effect waves-light btn"><i
-            class="material-icons left">edit</i>Edit</a>
-    <a href="{% url 'phone:phone_delete' pk=contact.pk %}" class="waves-effect waves-light btn"><i
-            class="material-icons left">delete</i>Delete</a>
-</div>
+                <a href="{% url 'phone:phone_list' %}" class="waves-effect waves-light btn"><i
+                                class="material-icons left">arrow_back</i>Back</a>
+                <a href="{% url 'phone:phone_update' pk=contact.pk %}" class="waves-effect waves-light btn"><i
+                                class="material-icons left">edit</i>Edit</a>
+                <a href="{% url 'phone:phone_delete' pk=contact.pk %}" class="waves-effect waves-light btn"><i
+                                class="material-icons left">delete</i>Delete</a>
+        </div>
 </div>
 {% endblock content %}
