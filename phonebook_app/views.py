@@ -46,10 +46,8 @@ def phone_list(request):
 def phone_detail(request, pk):
     title = 'Contact detail'
     contact = get_object_or_404(Contact, pk=pk)
-    phonequeryset = contact.phone_set.all().values_list()
-    phones = [''.join(str(i[1])) for i in phonequeryset]
-    emailqueryset = contact.email_set.all().values_list()
-    emails = [''.join(str(i[1])) for i in emailqueryset]
+    phones = contact.phone_set.all()
+    emails = contact.email_set.all()
     context = {
         'title': title,
         'contact': contact,
