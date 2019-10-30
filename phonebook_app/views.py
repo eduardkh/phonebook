@@ -12,8 +12,9 @@ def phone_list(request):
     title = 'Contact list'
     queryset_list = Contact.objects.all()
     # for simple Search Form
-    query = request.GET.get('q').strip().split()
+    query = request.GET.get('q')
     if query:
+        query.strip().split()
         queryset_list = queryset_list.filter(
             Q(company__icontains=query[0]) |
             Q(job_title__icontains=query[0]) |
