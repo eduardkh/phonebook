@@ -14,7 +14,7 @@ def phone_list(request):
     # for simple Search Form
     query = request.GET.get('q')
     if query:
-        query.strip().split()
+        query = query.strip().split()
         queryset_list = queryset_list.filter(
             Q(company__icontains=query[0]) |
             Q(job_title__icontains=query[0]) |
