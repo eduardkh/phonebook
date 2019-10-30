@@ -12,14 +12,14 @@ def phone_list(request):
     title = 'Contact list'
     queryset_list = Contact.objects.all()
     # for simple Search Form
-    query = request.GET.get('q')
+    query = request.GET.get('q').strip().split()
     if query:
         queryset_list = queryset_list.filter(
-            Q(company__icontains=query) |
-            Q(job_title__icontains=query) |
-            Q(first_name__icontains=query) |
-            Q(last_name__icontains=query) |
-            Q(notes__icontains=query)
+            Q(company__icontains=query[0]) |
+            Q(job_title__icontains=query[0]) |
+            Q(first_name__icontains=query[0]) |
+            Q(last_name__icontains=query[0]) |
+            Q(notes__icontains=query[0])
         ).distinct()
     paginator = Paginator(queryset_list, 6)
     page_request_var = 'page'
