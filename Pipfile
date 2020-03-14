@@ -6,6 +6,7 @@ verify_ssl = true
 [dev-packages]
 pep8 = "*"
 autopep8 = "*"
+pycodestyle = "*"
 
 [packages]
 django = "*"
@@ -13,4 +14,4 @@ pillow = "*"
 django-phonenumber-field = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.8"
