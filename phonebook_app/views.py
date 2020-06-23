@@ -60,8 +60,9 @@ def phone_detail(request, pk):
 
 def phone_create(request):
     title = 'Contact Create'
-    form = ContactForm(request.POST or None)
+    form = ContactForm(request.POST or None, request.FILES or None)
     if form.is_valid():
+        print(request.POST)
         instance = form.save(commit=False)
         # pre-save
         instance.save()
