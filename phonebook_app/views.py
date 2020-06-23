@@ -62,7 +62,7 @@ def phone_create(request):
     title = 'Contact Create'
     form = ContactForm(request.POST or None, request.FILES or None)
     if form.is_valid():
-        print(request.POST)
+        #print(request.POST)
         instance = form.save(commit=False)
         # pre-save
         instance.save()
@@ -79,7 +79,7 @@ def phone_create(request):
 def phone_update(request, pk=None):
     title = 'Contact Edit'
     instance = get_object_or_404(Contact, pk=pk)
-    form = ContactForm(request.POST or None, instance=instance)
+    form = ContactForm(request.POST or None, request.FILES or None, instance=instance)
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()
