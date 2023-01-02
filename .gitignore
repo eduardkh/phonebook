@@ -1,3 +1,5 @@
+pyvenv.cfg
+venv/
 .vscode
 # Compiled source #
 ###################

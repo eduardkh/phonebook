@@ -1,6 +1,6 @@
 ## Create a virtual environment and install django
 
-```
+```bash
 pipenv install pep8 --dev
 pipenv install autopep8 --dev
 pipenv install django
@@ -10,13 +10,13 @@ pipenv shell
 
 ## Create Project
 
-```
+```bash
 django-admin startproject phonebook .
 ```
 
 ## Check the server for the first time
 
-```
+```bash
 manage.py migrate
 manage.py createsuperuser
 manage.py runserver
@@ -24,20 +24,23 @@ manage.py runserver
 
 ## Create App
 
-```
+```bash
 django-admin startapp phonebook_app
 ```
 
 ## Create super-user
 
-```
+```bash
 manage.py createsuperuser
 ```
+
 ## shell commands
->play with some shell commands
+
+> play with some shell commands
 
 `manage.py shell`
-```
+
+```bash
 >>> from phonebook_app.models import *
 
 >>> Contact.objects.create(first_name="new shell name", last_name="new shell Lname", notes="notes")
@@ -54,4 +57,22 @@ manage.py createsuperuser
 >>> e.save()
 
 >>> Contact.objects.all()
+```
+
+## fix vulnerabilities
+
+```bash
+# check for vulnerabilities
+osv-scanner -r .
+# find outdated packages
+pip3 list --outdated
+# update packages
+pip3 list --outdated --format=json | jq -r ".[] | .name+\"==\"+.latest_version" | xargs -n1 pip3 install -U
+# save packages to requirements.txt
+pip3 freeze > requirements.txt
+# check the app is working
+python3 manage.py makemigrations
+python3 manage.py migrate
+python3 manage.py createsuperuser
+python3 manage.py runserver 0.0.0.0:8080
 ```
